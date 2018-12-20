@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+           <!--form标签来划定一个表单区域
+            action：数据的提交地址
+            method:提交方式 get post
+                    表单提交默认是以get 方式进行数据的传输
+                    get:通过url地址传输数据，数据会显示在url地址栏当中
+                        传输数据有大小限制，根据浏览器的不同数据大小不同
+                     post:数据不通过url地址传参，相对来说较安全，数据传输没有具体大小的限制
+                            一般表单指定使用post方式提交数据
+             enctype:如果表单当中有文件上传，必须添加这个属性
+             指定属性为："multipart/form-data"  用于文件转码
+
+            -->
+        <form action="" method=post" enctype="multipart/form-data">
+            <!--普通文本输入框
+               表单控件
+                 type:指定我们吃的表单类型（普通文本   密码框   单选框   多选框）
+                 必须要填写name 属性
+                 value:设置默认值
+
+            {username：1234}-->
+            <!--placeholder是非常好用的提示-->
+            用户名：<input type="text" name="username" value="" placeholder="请输入用户名"><br>
+            密  码：<input type="password" name="password"><br>
+                            <!--单选框 type="radio"  必须有name属性和value属性，并且一组单选框name属性的值必须相同-->
+            <!--checked默认选中男 但是可以更改-->
+            性别：<input type="radio" name="sex" value="1" checked>男
+                    <input type="radio" name="sex" value="0">女<br>
+            <!--
+                   多选框 type="checkbox"  必须指定name属性和value属性，并且name属性的值相同
+            -->
+
+            爱好：<br>
+                    <input type="checkbox" name="love[]" value="4">篮球<br>
+                    <input type="checkbox" name="love[]" value="12">足球<br>
+                    <input type="checkbox" name="love[]" value="sd">兵乓球<br>
+
+            <!--下拉选项框必须配合option来使用-->
+            学历：<br>
+                <select name="x21">
+                    <option value="0">小学</option>
+                    <option value="1">初中</option>
+                    <option value="2">高中</option>
+                    <option value="3">本科</option>
+                </select>
+            <!--文件上传  type="file"  一般用于文件上传-->
+            请选择上传文件：<input type="file" name="file">
+            <br>
+
+            请输入个人说明：<br>
+            <textarea name="text" id="">请输入个人信息</textarea>
+            <br>
+            <!--按钮 type="submit" -->
+            <input type="submit" value="确定"><br>
+            <button>提交</button><br>
+            <!--重置按钮-->
+            <!--disabled 是禁用东西-->
+            <input type="reset" disabled>
+
+            <!--隐藏域  hidden  不需要用户查看和填写的信息-->
+            <input type="hidden" name="id" value="0">
+        </form>
+</body>
+</html>
