@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attr（） 取出或设置某个属性的值</title>
+</head>
+<body>
+//取出图片的地址
+var $src = $('#img1').attr('src');
+
+//设置图片的地址和alt属性
+$('#img1').attr({src:'text.jpj',alt:'Test image'});
+
+//也可以用户设置class属性
+$('#abc').attr('class','all');
+
+//也可以自定义属性
+$('#abc').attr('love','iloveyou');
+
+
+//removeattr()输出属性
+$('#abc').removeattr('class');
+$('#abc').removeattr('love');
+</body>
+</html>

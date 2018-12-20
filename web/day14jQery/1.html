@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery事件绑定</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style>
+        #item1{
+            width:100px;
+            height:100px;
+            background:#112233;
+        }
+    </style>
+</head>
+<body>
+<script>
+    //在div之前加载div是无效的
+    console.log($('#item1'));
+        //1方法：当页面加载完成之后触发ready
+    $(document).ready(function(){
+        //加载完成之后执行的代码
+        console.log($('#item1'));
+    });
+    //2方法：当文档加载完成之后自动调用自己
+    $(function(){
+        console.log($('item1'));
+    })
+</script>
+<div id="item1"></div>
+<script>
+    //基本绑定
+    $('#item1').click(function(){
+        console.log('基本的事件绑定方法')
+    })
+    //双击事件
+    $('#item1').dblclick(function(){
+        console.log('这是双击事件')
+    })
+    //bind方法绑定
+    $('#item1').bind('click',function(){
+        console.log('bind绑定事件方法')
+    })
+    //接触所有事件绑定
+        //注意： 如果不指定解除的事件 那么就会解除元素上的所有事件
+        //如果要解除指定的事件就给他传指定时间的参数
+    //$('#item1').unbind();
+        //接触指定事件绑定
+    $('#item1').unbind('click');
+</script>
+</body>
+</html>
